@@ -1,0 +1,32 @@
+{
+  "name": "bezzzier-game",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "test": "node --test tests/*.test.ts",
+    "preview": "vite preview",
+    "format": "biome format --write .",
+    "format:check": "biome format .",
+    "lint": "biome lint --error-on-warnings .",
+    "lint:fix": "biome lint --write --error-on-warnings .",
+    "hooks:install": "git config --local core.hooksPath .githooks",
+    "imports:check": "biome check --formatter-enabled=false --linter-enabled=false --only=assist/source/organizeImports --enforce-assist=true .",
+    "imports:fix": "biome check --write --formatter-enabled=false --linter-enabled=false --only=assist/source/organizeImports --enforce-assist=true ."
+  },
+  "dependencies": {
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "zustand": "5.0.15"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.4.13",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "typescript": "5.9.3",
+    "vite": "7.3.6"
+  },
+  "packageManager": "pnpm@12.16.1"
+}

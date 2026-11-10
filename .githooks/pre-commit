@@ -1,0 +1,20 @@
+#!/bin/sh
+set -eu
+
+if git diff --cached --quiet; then
+  exit 0
+fi
+
+project_root=$(git rev-parse --show-toplevel)
+snapshot=$(mktemp -d)
+trap 'rm -rf "$snapshot"' EXIT
+
+git checkout-index --all --prefix="$snapshot/"
+ln -s "$project_root/node_modules" "$snapshot/node_modules"
+
+cd "$snapshot"
+# The snapshot reuses installed dependencies from the project.
+export pnpm_config_verify_deps_before_run=false
+pnpm run format:check
+pnpm run lint
+pnpm run imports:check
