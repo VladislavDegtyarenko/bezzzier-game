@@ -47,3 +47,9 @@ React and TypeScript implement the interface, Vite serves and builds it, and Bio
 | `pnpm run hooks:install` | Enable the Git pre-commit hook in the current clone |
 
 The pre-commit hook checks formatting, linting, and import order in the files staged for the commit.
+
+## Deploy to GitHub Pages
+
+In the repository settings, open **Pages** and select **GitHub Actions** as the source. The [deployment workflow](.github/workflows/deploy.yml) builds and publishes the site after each push to `main`. You can also run it from the **Actions** tab on `main`.
+
+The workflow passes the Pages base path to Vite so the built site loads its JavaScript, styles, and favicon under the repository URL. Local builds use Vite's default base path.
