@@ -1,6 +1,10 @@
-# Bezzzier Game
+# <img src="public/favicon.svg" width="32" height="32" alt=""> Bezzzier Game
+
+[**Play the live demo**](https://vladislavdegtyarenko.github.io/bezzzier-game/)
 
 Bezzzier Game is a browser puzzle about animation easing, or how an animation speeds up and slows down. Watch a target square move, then adjust a cubic Bézier curve to make your square match it. Five levels take you from constant speed to overshooting the finish.
+
+![Steady Pace, the first level, with the motion preview and Bézier curve editor](docs/steady-pace.jpg)
 
 ## Run locally
 
